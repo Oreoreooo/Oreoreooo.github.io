@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synchronous Video</title>
+  <title>Video Player v0</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -54,13 +54,6 @@
       videoPlayer.src = `https://www.youtube.com/embed/${state.videoId}?start=${Math.floor(state.currentTime)}&autoplay=${state.isPlaying ? 1 : 0}`;
     });
 
-    // Change video
-    function changeVideo() {
-      const videoId = videoIdInput.value;
-      if (videoId) {
-        socket.emit('changeVideo', videoId);
-      }
-    }
   </script>
 </body>
 </html>
