@@ -1,1 +1,66 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synchronous Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #video-container {
+      margin: 20px auto;
+    }
+    #video-id-input {
+      padding: 10px;
+      width: 300px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Synchronous Video Player</h1>
+  <div id="video-container">
+    <iframe
+      id="video-player"
+      width="560"
+      height="315"
+      src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div>
+    <input type="text" id="video-id-input" placeholder="Enter YouTube Video ID">
+    <button onclick="changeVideo()">Change Video</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    const videoPlayer = document.getElementById('video-player');
+    const videoIdInput = document.getElementById('video-id-input');
+
+    // Listen for video state updates
+    socket.on('videoState', (state) => {
+      videoPlayer.src = `https://www.youtube.com/embed/${state.videoId}?start=${Math.floor(state.currentTime)}&autoplay=${state.isPlaying ? 1 : 0}`;
+    });
+
+    // Change video
+    function changeVideo() {
+      const videoId = videoIdInput.value;
+      if (videoId) {
+        socket.emit('changeVideo', videoId);
+      }
+    }
+  </script>
+</body>
+</html>
