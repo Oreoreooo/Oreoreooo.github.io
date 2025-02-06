@@ -1,56 +1,40 @@
 const express = require('express');
 const http = require('http');
-const { Server } = require('socket.io');
+const WebSocket = require('ws');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const wss = new WebSocket.Server({ server });
 
-// Serve static files (HTML, CSS, JS)
-app.use(express.static('public'));
+// 存储所有连接的客户端
+const clients = new Set();
 
-// Store the current video state
-let currentVideoState = {
-  videoId: 'dQw4w9WgXcQ', // Default video ID (e.g., YouTube)
-  currentTime: 0,
-  isPlaying: false,
-};
+// WebSocket 连接处理
+wss.on('connection', (ws) => {
+  clients.add(ws);
 
-// Socket.IO connection
-io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+  // 接收客户端消息
+  ws.on('message', (message) => {
+    const data = JSON.parse(message);
 
-  // Send the current video state to the new user
-  socket.emit('videoState', currentVideoState);
-
-  // Handle play/pause events
-  socket.on('play', (time) => {
-    currentVideoState.isPlaying = true;
-    currentVideoState.currentTime = time;
-    io.emit('videoState', currentVideoState); // Broadcast to all users
+    // 广播消息给所有客户端
+    clients.forEach((client) => {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify(data));
+      }
+    });
   });
 
-  socket.on('pause', (time) => {
-    currentVideoState.isPlaying = false;
-    currentVideoState.currentTime = time;
-    io.emit('videoState', currentVideoState); // Broadcast to all users
-  });
-
-  // Handle video change
-  socket.on('changeVideo', (videoId) => {
-    currentVideoState.videoId = videoId;
-    currentVideoState.currentTime = 0;
-    currentVideoState.isPlaying = true;
-    io.emit('videoState', currentVideoState); // Broadcast to all users
-  });
-
-  // Handle user disconnect
-  socket.on('disconnect', () => {
-    console.log('A user disconnected:', socket.id);
+  // 客户端断开连接
+  ws.on('close', () => {
+    clients.delete(ws);
   });
 });
 
-// Start the server
+// 提供静态文件（前端页面）
+app.use(express.static('client'));
+
+// 启动服务器
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
