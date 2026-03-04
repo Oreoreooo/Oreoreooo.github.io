@@ -11,4 +11,4 @@ Hi! This is Bao Xinyang. I am current a MSc student in Electrical and Computer E
 
 In addition to my studies, I work as a part-time teaching assistant at [HKU Innovation Wing](https://innowings.engg.hku.hk/innowing1/), where I help members in using 3D printers and laser cutting machines and supporting hands-on prototyping and rapid fabrication. I enjoy bridging the gap between research and real-world applications, building projects that are both fun and functional.
 
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=300&t=n&d=9H2jQTUszfpt9UmQ2Ce4N_S87BL4sRiwiHz-zsyKpik&co=aed3ed&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+<a href="https://mapmyvisitors.com/web/1c2zu" title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=9H2jQTUszfpt9UmQ2Ce4N_S87BL4sRiwiHz-zsyKpik&cl=ffffff&w=300&t=n&co=aed3ed&cmo=3acc3a&cmn=ff5353&ct=ffffff" /></a>
