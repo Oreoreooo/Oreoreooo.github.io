@@ -13,10 +13,10 @@ Here you can list the courses you have taken or are teaching.
 ### 2025-2026
 * COMP7904 Information security: attacks and defense
 * ELEC6008 Pattern recognition and machine learning
-* ELEC6081 Biomedical signals and systems
+* ~~ELEC6081 Biomedical signals and systems~~ (cut my right thumb, didn't take final exam)
 * ELEC6603 Success in industrial entrepreneurship
 * ELEC7079 Investment and trading for engineering students
-* ELEC7083 Distributed systems
+* [ELEC7083 Distributed systems](/files/ELEC7083_Report.pdf)
 * ELEC7084 Advanced database
 * ELEC7088 Artificial intelligence computing by edge processor
 
