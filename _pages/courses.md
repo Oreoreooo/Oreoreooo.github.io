@@ -7,7 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-Here you can list the courses you have taken or are teaching.
 
 ## Graduate Courses
 ### 2025-2026
@@ -19,6 +18,7 @@ Here you can list the courses you have taken or are teaching.
 * [ELEC7083 Distributed systems](/files/ELEC7083_Report.pdf)
 * ELEC7084 Advanced database
 * ELEC7088 Artificial intelligence computing by edge processor
+* MECH7012 Principles of engineering management
 
 ## Undergraduate Courses
 ### 2021-2022

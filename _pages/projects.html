@@ -1,0 +1,171 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+
+<div class="projects-list">
+  <article class="project-entry">
+    <header class="project-entry__header">
+      <h2>
+        <span>MSc Thesis &mdash; Student-Facing Modular LLM Agent</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2026-06"><em>Jun. 2026 &ndash; Jul. 2026</em></time>
+      </h2>
+      <a class="project-entry__link" href="https://github.com/Oreoreooo/TutorAgent" target="_blank" rel="noopener noreferrer" aria-label="Open TutorAgent on GitHub" title="Open TutorAgent on GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <a class="project-entry__link" href="{{ base_path }}/files/msc-thesis.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open MSc thesis PDF" title="Open MSc thesis PDF">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      </a>
+    </header>
+    <p>
+      Built a <strong>LangGraph-based agentic AI system</strong> integrating <strong>RAG</strong>, vision-language reasoning, tool calling, and shared-state orchestration to handle student queries and multi-step institutional workflows. Created a 100-scenario evaluation benchmark, achieving <strong>95% intent accuracy</strong>, <strong>93.3% workflow-structure accuracy</strong>, <strong>97.8% tool-call success</strong>, and <strong>81% end-to-end task resolution</strong>.
+    </p>
+  </article>
+
+  <article class="project-entry">
+    <header class="project-entry__header">
+      <h2>
+        <span>A Survey of Inconsistency in Heterogeneous LLM-Based Multi-Agent Systems</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2026-04"><em>Apr. 2026 &ndash; May 2026</em></time>
+      </h2>
+      <a class="project-entry__link" href="{{ base_path }}/files/ELEC7083_Report.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open survey project PDF" title="Open survey project PDF">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      </a>
+    </header>
+    <p>
+      Proposed a <strong>Cognition&ndash;Memory&ndash;Action framework</strong> to analyze inconsistency across task understanding, shared memory, and action execution in multi-agent collaboration. Reviewed representative mitigation strategies including shared world models, standardized workflows, shared memory, synchronization protocols, conversation orchestration, and transactional tool control.
+    </p>
+  </article>
+
+  <article class="project-entry">
+    <header class="project-entry__header">
+      <h2>
+        <span>Multi-modal Motion Generation Pipeline for Embodied AI</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2024-11"><em>Nov. 2024 &ndash; Apr. 2025</em></time>
+      </h2>
+      <a class="project-entry__link" href="{{ base_path }}/files/final%20report.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Embodied AI final report PDF" title="Open Embodied AI final report PDF">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      </a>
+    </header>
+    <p>
+      Developed an end-to-end motion synthesis pipeline using <strong>GPT-4o</strong> to reason from environment images and generate semantic action sequences. Integrated the <strong>CHOIS diffusion framework</strong> to transform instructions, environmental context, and planned waypoints into physically plausible 3D human-object interactions, evaluated through <strong>Foot Sliding</strong> and <strong>Waypoint Error</strong>.
+    </p>
+  </article>
+
+  <article class="project-entry">
+    <header class="project-entry__header">
+      <h2>
+        <span>Dogbot</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2024-03"><em>Mar. 2024 &ndash; Apr. 2024</em></time>
+      </h2>
+      <a class="project-entry__link" href="https://github.com/Foahh/elec3848_dogbot" target="_blank" rel="noopener noreferrer" aria-label="Open Dogbot on GitHub" title="Open Dogbot on GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+    </header>
+    <p>
+      Developed a robot dog on <strong>NVIDIA Jetson Nano</strong> and <strong>Arduino Mega 2560</strong> with <strong>ROS 2</strong>, featuring obstacle avoidance, autonomous patrol, object detection and grasping, and voice control. Trained an <strong>SSD object detector</strong> on a custom 100-image dataset and connected <strong>Siri</strong> and <strong>iOS Shortcuts</strong> with the Jetson Nano for voice-controlled movement and object retrieval.
+    </p>
+  </article>
+
+  <article class="project-entry">
+    <header class="project-entry__header">
+      <h2>
+        <span>Gluttonous Snake</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2022-03"><em>Mar. 2022 &ndash; Apr. 2022</em></time>
+      </h2>
+      <a class="project-entry__link" href="https://github.com/Oreoreooo/Gluttonous_Snake-ENGG1340" target="_blank" rel="noopener noreferrer" aria-label="Open Gluttonous Snake on GitHub" title="Open Gluttonous Snake on GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+    </header>
+    <p>
+      Built a <strong>C++ interactive terminal game</strong> where players control a dynamically growing snake to collect letters and spell words across <strong>10 increasingly difficult levels</strong>. Implemented randomized map generation, real-time keyboard input using <strong>termios</strong>, a modular multi-file architecture, vector-based dynamic memory management, and persistent save/load functionality through file I/O.
+    </p>
+  </article>
+</div>
+
+<style>
+  .projects-list {
+    margin-top: 0.5rem;
+  }
+
+  .project-entry {
+    padding: 1.35rem 0 1.45rem;
+    border-top: 1px solid var(--global-border-color);
+  }
+
+  .project-entry__header h2 {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 0;
+    font-size: 1.14em;
+    line-height: 1.45;
+  }
+
+  .project-entry__divider {
+    margin: 0 0.65rem;
+    color: var(--global-text-color-light);
+    font-weight: 400;
+  }
+
+  .project-entry__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .project-entry__link {
+    flex: 0 0 auto;
+    color: var(--global-text-color-light);
+    font-size: 1.05em;
+    line-height: 1;
+  }
+
+  .project-entry__link:hover {
+    color: var(--global-link-color-hover);
+  }
+
+  .project-entry time {
+    white-space: nowrap;
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  .project-entry p {
+    margin: 0.8rem 0 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .project-entry__header {
+      align-items: flex-start;
+    }
+
+    .project-entry__header h2 {
+      display: block;
+    }
+
+    .project-entry__divider {
+      display: none;
+    }
+
+    .project-entry time {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--global-text-color-light);
+    }
+  }
+</style>
+
