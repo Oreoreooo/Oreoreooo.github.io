@@ -43,6 +43,71 @@ author_profile: true
     </p>
   </article>
 
+
+  <article class="project-entry project-entry--expandable">
+    <header class="project-entry__header">
+      <h2>
+        <span>Ora &mdash; Towards a Digital Representation of an Individual</span>
+        <span class="project-entry__divider" aria-hidden="true">|</span>
+        <time datetime="2025-06"><em>Jun. 2025 &ndash; Mar. 2026</em></time>
+      </h2>
+
+      <a class="project-entry__link"
+        href="https://link.springer.com/chapter/10.1007/978-981-92-0042-9_28"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open Ora publication"
+        title="Open Ora publication">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      </a>
+    </header>
+
+    <div class="project-entry__award">
+      <i class="fas fa-trophy" aria-hidden="true"></i>
+      <span>
+        Top 30 Project,
+        <a href="https://www.jumpstarter.hk/"
+          target="_blank"
+          rel="noopener noreferrer">
+          JUMPSTARTER ZPIRE 2026
+        </a>
+      </span>
+    </div>  
+
+    <p class="project-entry__preview">
+      <strong>Ora</strong> is an entrepreneurial project I started with two collaborators to explore whether an AI system can gradually learn and represent an individual through everyday conversations. We built a web-based prototype integrating <strong>LLMs</strong>, <strong>speech-to-text (STT)</strong>, and <strong>text-to-speech (TTS)</strong>, with long-term conversation histories reorganized into coherent personal narratives.
+    </p>
+
+    <details class="project-entry__details">
+      <summary>
+        <span class="project-entry__more">More </span>
+        <span class="project-entry__less">Less </span>
+      </summary>
+
+      <div class="project-entry__expanded">
+        <p>
+          <strong>Ora</strong> is an entrepreneurial project I started with two collaborators to explore a simple but ambitious idea: <strong>can an AI system gradually learn who a person is through everyday conversations?</strong>
+        </p>
+
+        <p>
+          We envisioned Ora as a long-term conversational companion rather than a session-based chatbot. Through continuous text and voice interactions, the system would accumulate information about a user&rsquo;s experiences, preferences, opinions, communication patterns, and personal history. Our longer-term goal was to use this information to construct a personalized digital agent that could increasingly resemble and represent the individual.
+        </p>
+
+        <p>
+          We developed a web-based prototype integrating <strong>large language models (LLMs)</strong>, <strong>speech-to-text (STT)</strong>, and <strong>text-to-speech (TTS)</strong>, and explored methods for reorganizing fragmented conversation histories into coherent personal narratives.
+        </p>
+
+        <p>
+          However, as the project progressed, we encountered a more fundamental challenge: <strong>storing what a person has said is not the same as computationally representing who that person is.</strong> Conversation histories may capture memories and explicit preferences, but they do not necessarily provide a representation that can generalize an individual&rsquo;s opinions, decisions, reasoning patterns, or behavior to unseen situations.
+        </p>
+
+        <p>
+          This unresolved technical challenge became one of the main motivations for my current research interest in <strong>individual simulation and personalized AI agents</strong>. I am particularly interested in investigating how different computational approaches to representing individuals&mdash;such as persona-based representations, retrieval-augmented memory, learned representations, and model adaptation&mdash;capture different dimensions of an individual, and how their fidelity can be systematically evaluated.
+        </p>
+      </div>
+    </details>
+  </article>
+
   <article class="project-entry">
     <header class="project-entry__header">
       <h2>
@@ -148,6 +213,120 @@ author_profile: true
     line-height: 1.7;
   }
 
+  /* Ora expandable project */
+.project-entry__preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.project-entry__details {
+  margin-top: 0.15rem;
+}
+
+/* More / Less */
+.project-entry__details summary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  list-style: none;
+
+  color: var(--global-text-color-light);
+  font-size: 0.88em;
+  font-weight: 400;
+  line-height: 1.2;
+
+  user-select: none;
+}
+
+.project-entry__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-entry__details summary::marker {
+  content: "";
+}
+
+.project-entry__details summary:hover {
+  color: var(--global-link-color-hover);
+}
+
+/* Default: show More */
+.project-entry__less {
+  display: none;
+}
+
+/* Expanded: show Less */
+.project-entry__details[open] .project-entry__more {
+  display: none;
+}
+
+.project-entry__details[open] .project-entry__less {
+  display: inline;
+}
+
+.project-entry__award {
+  margin-top: 0.45rem;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--global-text-color);
+}
+
+.project-entry__award i {
+  margin-right: 0.35rem;
+}
+
+.project-entry__award a {
+  color: var(--global-link-color);
+  text-decoration: none;
+}
+
+.project-entry__award a:hover {
+  color: var(--global-link-color-hover);
+  text-decoration: underline;
+}
+
+/*
+ * When opened:
+ * expanded content comes first,
+ * Less button moves to the bottom.
+ */
+.project-entry__details[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-entry__details[open] .project-entry__expanded {
+  order: 1;
+}
+
+.project-entry__details[open] summary {
+  order: 2;
+  margin-top: 0.15rem;
+}
+
+/* Expanded text */
+.project-entry__expanded {
+  margin-top: 0.65rem;
+}
+
+.project-entry__expanded p {
+  margin: 0 0 0.85rem;
+}
+
+.project-entry__expanded p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hide short preview after opening */
+.project-entry--expandable:has(.project-entry__details[open])
+.project-entry__preview {
+  display: none;
+}
+
   @media (max-width: 600px) {
     .project-entry__header {
       align-items: flex-start;
@@ -168,4 +347,3 @@ author_profile: true
     }
   }
 </style>
-
